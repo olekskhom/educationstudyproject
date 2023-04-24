@@ -52,6 +52,7 @@ address {
 /* ========== COMPONENTS ========== */
 body {
   color: var(--main-color);
+  background-color: var(--subwhite-color);
   letter-spacing: 3px;
 }
 
@@ -249,7 +250,7 @@ body {
 /* ===== SECTION GOOD ===== */
 .good {
   padding-top: 60px;
-  padding-bottom: 140px;
+  padding-bottom: 100px;
 }
 
 .section-title {
@@ -279,6 +280,10 @@ body {
   gap: 60px;
 }
 
+.good-item {
+  width: 300px;
+}
+
 .good-title-item {
   display: block;
   padding-top: 20px;
@@ -292,10 +297,42 @@ body {
 
   transition: box-shadow 250ms ease;
 }
+
+.good-overlay-box {
+  position: relative;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+.good-overlay {
+  font-weight: 500;
+  line-height: 1.4;
+  text-shadow: 1px 1px 5px var(--subwhite-color);
+
+  height: 100%;
+  position: absolute;
+  background-color: rgba(247, 99, 72, 0.8);
+  top: 0;
+  left: 0;
+
+  padding-top: 25px;
+  padding-left: 25px;
+  padding-right: 25px;
+  text-align: center;
+
+  overflow: auto;
+
+  transform: translate(0, 100%);
+  transition: transform 500ms ease;
+}
 /* hover focus */
 .good-link:hover .good-title-item,
-.good-link:focus .good-title-item {
+.good-link:focus .good-title-item,
+.good-link:focus .good-overlay,
+.good-link:hover .good-overlay {
   box-shadow: 0 2px 30px var(--accent-color);
+  transform: translate(0, 0);
 }
 /* ===== /SECTION 2 ===== */
 
@@ -304,4 +341,61 @@ body {
 /* ========== /MAINE ========== */
 
 /* ========== FOOTER ========== */
+.footer {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background-color: rgba(247, 99, 72, 0.9);
+}
+
+.footer-logo {
+  margin-bottom: 15px;
+  display: block;
+  text-shadow: 1px 2px 2px var(--subwhite-color);
+}
+
+.footer-contacts-item:first-child {
+  margin-bottom: 10px;
+}
+
+.footer-logo-item {
+  color: var(--subwhite-color);
+  text-shadow: 1px 2px 2px var(--main-color);
+}
+
+.footer-contacts-link {
+  color: var(--subwhite-color);
+}
 /* ========== /FOOTER ========== */
+/* elements */
+.up {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  letter-spacing: 1px;
+  font-weight: 600;
+  text-shadow: 1px 1px 2px var(--subwhite-color);
+
+  width: 50px;
+  height: 50px;
+  background-color: var(--accent-color);
+  border-radius: 50%;
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+
+  background-color: rgba(128, 128, 128, 0.3);
+  box-shadow: 0 2px 30px var(--accent-color),
+    inset -2px 1px 10px var(--accent-color);
+
+  transition: color 1000ms ease, background-color 250ms ease;
+}
+
+.up:hover,
+.up:focus {
+  color: whitesmoke;
+  background-color: var(--accent-color);
+  box-shadow: 0 2px 20px var(--subwhite-color);
+  text-shadow: 1px 1px 2px var(--main-color);
+}
+/* /elements */
